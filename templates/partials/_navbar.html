@@ -1,0 +1,28 @@
+
+ <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">HJD</a></h1>
+                <ul>
+                    <li><a href="{% url 'index' %}"  {% if '/' == request.path %}
+                            class="current"
+                        {% else %}
+                            class="nav-item mr-3"
+                        {% endif %}>Home</a></li>
+
+
+                    <li><a href="{% url 'about' %}"  {% if 'about' in request.path %}
+                            class="current"
+                        {% else %}
+                            class="nav-item mr-3"
+                        {% endif %}>About</a></li>
+
+
+                    <li><a href="{% url 'contact' %}"  {% if 'contact' in request.path %}
+                            class="current"
+                            {% else %}
+                            class="nav-item mr-3"
+                            {% endif %}>Contact</a></li>
+                    
+                </ul>
+            </div>  
+        </nav>

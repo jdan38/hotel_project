@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the greatest hotel website demo">
+    <meta name="keywords" content="hotel,maryland hotel">
+    <script src="https://kit.fontawesome.com/b279086192.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="{% static 'css/mobile.css' %}">
+    <title>Hotel JD | Welcome</title>
+</head>
+<body>
+    
+{% include 'partials/_navbar.html' %} 
+     
+{% block content %}{% endblock content %}
+
+{% include  'partials/_footer.html' %}
+</body>
+</html>
+<!--  java script should go below-->
+</body>
+</html>
