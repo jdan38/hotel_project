@@ -9,12 +9,17 @@
     <meta name="keywords" content="hotel,maryland hotel">
     <script src="https://kit.fontawesome.com/b279086192.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/mobile.css' %} "> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/search.css' %} ">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="{% static 'css/mobile.css' %}">
     <title>Hotel JD | Welcome</title>
 </head>
 <body>
     
+
 {% include 'partials/_navbar.html' %} 
+
+
      
 {% block content %}{% endblock content %}
 

@@ -268,4 +268,46 @@ border-radius: 50%;
     padding: 20px;
 }
 
+.flex-container{
+    display: flex;
+    flex-direction: column;
+     
+}
 
+
+
+.item-1 {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.item-2 {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+#soical {
+    flex: 1;
+}
+
+#company {
+    flex: 2; 
+}
+
+#app {
+    width: 200px;
+    height: 50px;
+    display: inline;
+    align-items: flex-end;
+    font-size: smaller;
+}
+#app span{
+    font-size: xx-small;
+}
+
+
+#pay {
+   
+}
