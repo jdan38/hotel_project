@@ -9,13 +9,17 @@
                             class="nav-item mr-3"
                         {% endif %}>Home</a></li>
 
-
                     <li><a href="{% url 'about' %}"  {% if 'about' in request.path %}
                             class="current"
                         {% else %}
                             class="nav-item mr-3"
                         {% endif %}>About</a></li>
 
+                     <li><a href="{% url 'listings' %}"  {% if 'listings' in request.path %}
+                            class="current"
+                        {% else %}
+                            class="nav-item mr-3"
+                        {% endif %}>Listings</a></li>
 
                     <li><a href="{% url 'contact' %}"  {% if 'contact' in request.path %}
                             class="current"
