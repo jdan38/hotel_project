@@ -1,0 +1,18 @@
+MODEL/DB FEILDS
+
+###LISTINGS
+id:INT
+staff(manager): INT (FOREIGN KEY [staff])
+title: STR
+hotel:INT (FOREIGN KEY [hotels])
+address:
+city:
+state:
+zipcode:
+
+
+roomNumber:
+description:
+price: INT
+beds:INT
+occupency:INT
