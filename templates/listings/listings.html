@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
+
 
 
 {% block content %}
@@ -14,12 +14,13 @@
                         <h2>Narrow results:</h2>
                         <p>1,123 hotels, air bnb's</p>
                     </div>
+                    <hr class="solid">
                     <div id="property_name">
                         <label id="inputfield-20">Name contains</label>
                         <input type="text" placeholder="Property name" aria-labelledby="inputfield-20">
                     </div>
 
-
+                    <hr class="solid">
                         <ul class="list-popular">
                             <li><button role="checkbox" aria-checked="false" class="filter_item" data-value="2048" type="button">Breakfast included</button></li>
                             <button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="2048" type="button">Breakfast included</button>
@@ -30,20 +31,50 @@
                             <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="64" type="button">Pet Friendly</button></li>
                             <ul class="list-popular _18fjyY"><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="2048" type="button">Breakfast included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="128" type="button">Pool</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="527" type="button">WiFi included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="134234112" type="button">Parking included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="64" type="button">Pet Friendly</button></li>
                         </ul>
-                    <legend class="_1mIXmW"><span class="_2OoRbu">Nightly Price:</span><span class="_28Rk2P">$0 - $500+</span></legend>
+
+                    <hr class="solid">    
                     <span class="_2OoRbu">Nightly Price:</span>
-                    <span class="_28Rk2P">$0 - $500+</span>
-                    <legend class="_1mIXmW"><span class="_2OoRbu">Nightly Price:</span><span class="_28Rk2P">$0 - $500+</span></legend>
-                    <legend class="_1mIXmW"><span class="_2OoRbu">Nightly Price:</span><span class="_28Rk2P">$0 - $500+</span></legend>
-                    <span class="_2OoRbu">Nightly Price:</span>
-                    <span class="_28Rk2P">$0 - $500+</span>
-                    <legend class="_1mIXmW"><span class="_2OoRbu">Nightly Price:</span><span class="_28Rk2P">$0 - $500+</span></legend>
+                    <span class="_28Rk2P">$<span id="demo2"></span> $<span id="demo"></span>+
+                    
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="500" value="00" class="slider" id="myRange">
+                                          
+                    </div>
+
+                    <script>
+                        var slider = document.getElementById("myRange");                    
+                        var output = document.getElementById("demo");                    
+                        output.innerHTML = slider.value;                        
+                        slider.oninput = function() {
+                            output.innerHTML = this.value;
+                            }
+                        
+                    </script>
+                    <hr class="solid">
 
                     <h2>Star rating</h2>
                     <div class="_2B2cb2">
                         <input name="f-star-rating" id="f-star-rating-1" type="checkbox" class="is-visually-hidden" data-value="1"><label for="f-star-rating-1" class="">1</label><input name="f-star-rating" id="f-star-rating-2" type="checkbox" class="is-visually-hidden" data-value="2"><label for="f-star-rating-2" class="">2</label><input name="f-star-rating" id="f-star-rating-3" type="checkbox" class="is-visually-hidden" data-value="3"><label for="f-star-rating-3" class="">3</label><input name="f-star-rating" id="f-star-rating-4" type="checkbox" class="is-visually-hidden" data-value="4"><label for="f-star-rating-4" class="">4</label><input name="f-star-rating" id="f-star-rating-5" type="checkbox" class="is-visually-hidden" data-value="5"><label for="f-star-rating-5" class="">5</label>
                     </div>
-        
+                    <hr class="solid">
+
+                     <span >Guest rating:</span>
+                    <span ><p>Value: <span id="rate"></span></p></span>
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="500" value="50" class="slider" id="myRange2">
+                        
+                    </div>
+
+                    <script>
+                        var slider2 = document.getElementById("myRange2");
+                        var output2 = document.getElementById("rate");
+                        output2.innerHTML = slider2.value;
+
+                        slider.oninput = function() {
+                            output.innerHTML = this.value;
+                            }
+                    </script>
+                    <hr class="solid">
                 </div>
             </div>
         </section>
