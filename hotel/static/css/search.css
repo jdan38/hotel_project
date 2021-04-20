@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 1000px;
-    height: 175px;
+    height: 110px;
     align-items: center;
     justify-content: start;
    
@@ -10,36 +10,41 @@
 
 #block1 {
     display: flex;
+    margin-top: 5px;
+    max-height: 45px;
     
 }
 #block2 {
     display: flex;
     justify-content: start;
+    max-height: 50px;
 }
 
 #find {
-    max-width: 400px;
-    max-height: 40px;
+    min-width: 150px;
+    min-height: 40px;
     background-color: orange;
+    margin-left: 150px;
    
 }
 
 .item {
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    margin-left: 20px;
+    min-height: 40px;
 }
 
 .item2 {
     display: flex;
     flex-direction: column;
-    padding: 10px 110px;
+    padding: 2px ;
     
 }
 
 .item input{
     height: 40px;
     width: 250px;
-    
+
     border-width: 1px;
 }
