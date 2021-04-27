@@ -1,0 +1,68 @@
+{% extends 'base.html' %} 
+{% load static %}
+ 
+
+ {% block content %}
+ <div id="item_2">
+        <div class="sort">
+            <h1>Name of Search City and State, United States of Anerica</h1>
+            <p>Sort by 
+                <button>Featured</button>
+                <button>Star rating</button>
+                <button>Distaince</button>
+                <button>Guest rating</button>
+                <button>Price</button>
+            </p>
+        </div>
+
+            <div>     
+                <section id="lists">
+                    <ul class="listings">
+                        <li> <!--  start loop -->
+                        {% if hotels %}
+                            {% for hotel in hotels %}
+                                <div class="flex-container">      
+                                <img src="https://source.unsplash.com/daily">                                  
+                                    <div id="info">
+                                        <h3><span >{{hotel.title}}</span> </h3>  {{hotel.rating}} stars
+                                        <br>  Hotel ID:{{ hotel.hotel_id}}  
+                                        <p class="_2oHhXM">{{hotel.address}}, {{hotel.city}}, {{hotel.state}}, {{hotel.zipcode}}, United States</p>
+                                        <p class="_2LH_yj">Number of rooms: {{hotel.rooms}}</p>
+                                        <p>0.2 miles to city center</p>
+                                        <span>7.4</span>
+                                        <span>Good</span>
+                                    </div>
+                                    <div id="info_2">
+                                        <span>203 Hotels.com guest reviews</span>
+                                        <ul>
+                                            <li><span>Pool</span></li>
+                                            <li><span>Parking available</span></li>
+                                            <li><span>Restaurant</span></li>
+                                            <li><span>Bathtub</span></li>
+                                            <li><span>Connecting rooms available</span></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div id="price">
+                                        <p>${{listing.price}}</p>
+                                        <p><i class="fas fa-info-circle"></i> total $146</p>
+                                        <button id="booknow" >BOOK NOW</button>
+                                    </div>
+
+                                </div>  
+                            
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-md-12">
+                                <p>No Listings Available</p>
+                            </div>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    
+</div>
+
+{% endblock content %}

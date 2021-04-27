@@ -20,4 +20,4 @@ class Hotel(models.Model):
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 
     def __str__(self):
-        return self.title
+        return self.hotel_id

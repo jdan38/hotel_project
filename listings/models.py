@@ -5,7 +5,7 @@ from hotels.models import Hotel
 
 class Listing(models.Model):
     
-    # hotel_id = models.ForeignKey(Hotel, related_name='hotel_id', on_delete=models.DO_NOTHING)
+    
     hotel_id = models.ForeignKey(Hotel, on_delete=models.DO_NOTHING, default='1')
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
