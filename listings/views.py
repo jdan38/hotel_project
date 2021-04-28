@@ -5,8 +5,8 @@ from .models import Listing
 
 def index(request):
 
-    listings = Listing.objects.order_by('price').filter(is_occupied=True)
-    #listings = Listing.objects.all()
+    #listings = Listing.objects.order_by('price').filter(is_occupied=True)
+    listings = Listing.objects.all()
 
     paginator = Paginator(listings, 6)
     page = request.GET.get('page')
@@ -16,6 +16,7 @@ def index(request):
 
     context = {
         'listings': paged_listing
+        #'listings' : listings
     }
     return render(request, 'listings/listings.html',context)
 
@@ -25,3 +26,4 @@ def listing(request):
 def search(request):
     return render(request, 'listings/search.html')
     
+

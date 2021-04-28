@@ -3,8 +3,8 @@
 {% load humanize %}
 
 {% block content %}
- 
-<div id="listings_container">
+
+ <div id="listings_container">
     <div id="item_1">
         <section id="filter_container">    
             <div id="filters">
@@ -66,7 +66,7 @@
 
                     <script>
                         var slider2 = document.getElementById("myRange2");
-                        var output2 = document.getElementById("rate");
+                        var output2 = document.getElementById("myRange");
                         output2.innerHTML = slider2.value;
 
                         slider.oninput = function() {
@@ -81,6 +81,7 @@
         
     
     <!---    Right  Side   -->
+    
     <div id="item_2">
         <div class="sort">
             <h1>Name of Search City and State, United States of Anerica</h1>
@@ -104,7 +105,7 @@
                                
                                   
                                     <div id="info">
-                                        <h3><span>Name of Hotel</a>  Room:{{ listing.id}} </span>  </h3>
+                                        <h3><span>Name of Hotel</a>  Room:{{ listing.roomnumber}} </span>  </h3>
                                         2.5 star
                                         <p class="_2oHhXM">800-814 Atlantic Ave, Ocean City, 08226, NJ, United States</p>
                                         <p class="_2LH_yj">North End</p>
@@ -124,8 +125,6 @@
                                         </ul>
                                     </div>
 
-                                 
-                                  
                                     <div id="price">
                                         <p>${{listing.price}}</p>
                                         <p><i class="fas fa-info-circle"></i> total $ {{listing.price}} </p>
@@ -182,12 +181,13 @@
                 </div>
             </div>
         </div>
-    
+
 
 
 
 
 </div>
+
 {% endblock content %}
 
 

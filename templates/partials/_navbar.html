@@ -100,12 +100,17 @@
                             {% else %}
                                 class="nav-item mr-3"
                             {% endif %}>About</a></li>
+                            <li><a href="{% url 'hotels' %}"  {% if 'hotels' in request.path %}
+                                class="current"
+                            {% else %}
+                                class="nav-item mr-3"
+                            {% endif %}>Hotels</a></li>
                             {% comment %} <li><a href="about-us.html">About Us</a></li> {% endcomment %}
                             <li><a href="{% url 'listings' %}"  {% if 'listings' in request.path %}
-                            class="current"
-                        {% else %}
-                            class="nav-item mr-3"
-                        {% endif %}>Listings</a></li>
+                                class="current"
+                            {% else %}
+                                class="nav-item mr-3"
+                            {% endif %}>Listings</a></li>
                             {% comment %} <li>
                                     <a href="#" class="has-child">Listing</a>
                                      <ul class="child-nav">

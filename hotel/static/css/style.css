@@ -266,7 +266,9 @@ border-radius: 50%;
     border-color: #f7c08a;
 }
 /*Footer */
-#main-footer {
+#page-footer {
+    position: flex;
+    align-content: flex-end;
     text-align: center;
     background: #444;
     color: #fff;
