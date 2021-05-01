@@ -3,7 +3,7 @@
 {% load humanize %}
 
 {% block content %}
-
+<div class="clr"></div>
  <div id="listings_container">
     <div id="item_1">
         <section id="filter_container">    
@@ -36,8 +36,7 @@
                     <span class="_28Rk2P">$<span id="demo2"></span> $<span id="demo"></span>+
                     
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="500" value="00" class="slider" id="myRange">
-                                          
+                        <input type="range" min="0" max="600" value="0" class="slider" id="myRange">                     
                     </div>
 
                     <script>
@@ -58,19 +57,19 @@
                     <hr class="solid">
 
                      <span >Guest rating:</span>
-                    <span ><p>Value: <span id="rate"></span></p></span>
+                   <span class="_28Rk2P"><span id="rate"></span>
+
                     <div class="slidecontainer">
-                        <input type="range" min="0" max="500" value="50" class="slider" id="myRange2">
-                        
+                        <input type="range" min="0" max="10" value="0" class="slider" id="myRange2">  
                     </div>
 
                     <script>
                         var slider2 = document.getElementById("myRange2");
-                        var output2 = document.getElementById("myRange");
+                        var output2 = document.getElementById("rate");
                         output2.innerHTML = slider2.value;
 
-                        slider.oninput = function() {
-                            output.innerHTML = this.value;
+                        slider2.oninput = function() {
+                            output2.innerHTML = this.value;
                             }
                     </script>
                     <hr class="solid">
@@ -105,7 +104,7 @@
                                
                                   
                                     <div id="info">
-                                        <h3><span>Name of Hotel</a>  Room:{{ listing.roomnumber}} </span>  </h3>
+                                        <h3><span><a href="{% url 'listing' listing.id %}">Room:{{ listing.roomnumber}}</a></span><br> {{ listing.title}} </h3> 
                                         2.5 star
                                         <p class="_2oHhXM">800-814 Atlantic Ave, Ocean City, 08226, NJ, United States</p>
                                         <p class="_2LH_yj">North End</p>

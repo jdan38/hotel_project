@@ -1,1 +1,194 @@
-<h1>Search</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="clr"></div>
+ <div id="listings_container">
+    <div id="item_1">
+        <section id="filter_container">    
+            <div id="filters">
+                <div id="b1">
+                    <div id="results">
+                        <h2>Narrow results:</h2>
+                        <p>1,123 hotels, air bnb's</p>
+                    </div>
+                    <hr class="solid">
+                    <div id="property_name">
+                        <label id="inputfield-20">Name contains</label>
+                        <input type="text" placeholder="Property name" aria-labelledby="inputfield-20">
+                    </div>
+
+                    <hr class="solid">
+                        <ul class="list-popular">
+                            <li><button role="checkbox" aria-checked="false" class="filter_item" data-value="2048" type="button">Breakfast included</button></li>
+                            <button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="2048" type="button">Breakfast included</button>
+                            <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="2048" type="button">Breakfast included</button></li>
+                            <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="128" type="button">Pool</button></li>
+                            <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="527" type="button">WiFi included</button></li>
+                            <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="134234112" type="button">Parking included</button></li>
+                            <li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="64" type="button">Pet Friendly</button></li>
+                            <ul class="list-popular _18fjyY"><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="2048" type="button">Breakfast included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="128" type="button">Pool</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="527" type="button">WiFi included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="134234112" type="button">Parking included</button></li><li><button role="checkbox" aria-checked="false" class="_3cAYOx" data-value="64" type="button">Pet Friendly</button></li>
+                        </ul>
+
+                    <hr class="solid">    
+                    <span class="_2OoRbu">Nightly Price:</span>
+                    <span class="_28Rk2P">$<span id="demo2"></span> $<span id="demo"></span>+
+                    
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="600" value="0" class="slider" id="myRange">                     
+                    </div>
+
+                    <script>
+                        var slider = document.getElementById("myRange");                    
+                        var output = document.getElementById("demo");                    
+                        output.innerHTML = slider.value;                        
+                        slider.oninput = function() {
+                            output.innerHTML = this.value;
+                            }
+                        
+                    </script>
+                    <hr class="solid">
+
+                    <h2>Star rating</h2>
+                    <div class="_2B2cb2">
+                        <input name="f-star-rating" id="f-star-rating-1" type="checkbox" class="is-visually-hidden" data-value="1"><label for="f-star-rating-1" class="">1</label><input name="f-star-rating" id="f-star-rating-2" type="checkbox" class="is-visually-hidden" data-value="2"><label for="f-star-rating-2" class="">2</label><input name="f-star-rating" id="f-star-rating-3" type="checkbox" class="is-visually-hidden" data-value="3"><label for="f-star-rating-3" class="">3</label><input name="f-star-rating" id="f-star-rating-4" type="checkbox" class="is-visually-hidden" data-value="4"><label for="f-star-rating-4" class="">4</label><input name="f-star-rating" id="f-star-rating-5" type="checkbox" class="is-visually-hidden" data-value="5"><label for="f-star-rating-5" class="">5</label>
+                    </div>
+                    <hr class="solid">
+
+                     <span >Guest rating:</span>
+                   <span class="_28Rk2P"><span id="rate"></span>
+
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="10" value="0" class="slider" id="myRange2">  
+                    </div>
+
+                    <script>
+                        var slider2 = document.getElementById("myRange2");
+                        var output2 = document.getElementById("rate");
+                        output2.innerHTML = slider2.value;
+
+                        slider2.oninput = function() {
+                            output2.innerHTML = this.value;
+                            }
+                    </script>
+                    <hr class="solid">
+                </div>
+            </div>
+        </section>
+    </div>
+        
+    
+    <!---    Right  Side   -->
+    
+    <div id="item_2">
+        <div class="sort">
+            <h1>Name of Search City and State, United States of Anerica</h1>
+            <p>Sort by 
+                <button>Featured</button>
+                <button>Star rating</button>
+                <button>Distaince</button>
+                <button>Guest rating</button>
+                <button>Price</button>
+            </p>
+        </div>
+
+            <div>     
+                <section id="lists">
+                    <ul class="listings">
+                        <li> <!--  start loop -->
+                        {% if listings %}
+                            {% for listing in listings %}
+                                <div class="flex-container">      
+                                <img src="https://source.unsplash.com/daily">
+                               
+                                  
+                                    <div id="info">
+                                        <h3><span><a href="{% url 'listing' listing.id %}">Room:{{ listing.roomnumber}}</a></span><br> {{ listing.title}} </h3> 
+                                        2.5 star
+                                        <p class="_2oHhXM">800-814 Atlantic Ave, Ocean City, 08226, NJ, United States</p>
+                                        <p class="_2LH_yj">North End</p>
+                                        <p>0.2 miles to city center</p>
+                                        <p>0.2 miles to city center</p>
+                                        <span>7.4</span>
+                                        <span>Good</span>
+                                    </div>
+                                    <div id="info_2">
+                                        <span>203 Hotels.com guest reviews</span>
+                                        <ul>
+                                            <li><span>Pool</span></li>
+                                            <li><span>Parking available</span></li>
+                                            <li><span>Restaurant</span></li>
+                                            <li><span>Bathtub</span></li>
+                                            <li><span>Connecting rooms available</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="price">
+                                        <p>${{listing.price}}</p>
+                                        <p><i class="fas fa-info-circle"></i> total $ {{listing.price}} </p>
+                                        <button id="booknow" >BOOK NOW</button>
+                                    </div>
+
+                                </div>  
+                            
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-md-12">
+                                <p>No Listings Available</p>
+                            </div>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if listings.has_other_pages %}
+                    <ul class="pagination">
+                        {% if listings.has_previous %}
+                            <li class="page-item">
+                                <a href="?page={{listings.previous_page_number}}" class="page-link">&laquo;</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">&laquo;</a>
+                            </li>
+                        {% endif %}
+                        {% for i in listings.paginator.page_range %}
+                            {% if listing.number == i %}
+                                <li class="page-item active">
+                                    <a  class="page-link">{{i}}</a>
+                                </li>
+                            {% else %}
+                            <li class="page-item">
+                                <a href="?page={{i}}" class="page-link">{{i}}</a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if listings.has_next %}
+                        <li class="page-item">
+                            <a href="?page={{listings.next_page_number}}" class="page-link">&raquo;</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">&raquo;</a>
+                        </li>
+                    {% endif %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</div>
+
+{% endblock content %}
+
+
+
+

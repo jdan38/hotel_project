@@ -1,29 +1,66 @@
-<div id="booking">
-    <div id="block1">
-        <div class="item">
-            <input type="text" placeholder="Destination">
-        </div>
-        <div id="date_in" class="item">
-            <input type="date" placeholder="Date In"> 
-        </div>
-        <div id="date_out" class="item">
-            <input type="date" placeholder="Date Out"> 
-        </div>
-        <button class="item" id="find">FIND HOTELS</button></div>
-    <br> 
-    <div id="block2">
-        <div class="item">
-            
-            <input type="number" placeholder="Room">
-        </div>
-        <div class="item">
-            
-            <input type="number" placeholder="# Guest">
-        </div>
-        <div class="item2">
-            <input type="checkbox">
-            <label for="guest">Use Points / Certificates</label>
-        </div>
-    </div>
+
+
+
+<div class="clr"></div>
+
+    <form action="{% url 'search' %}">
+
+            <h2>Where would you like to go!</h2>
     
-</div>
+            <div class="col-md-3 mo-3" >
+                <input type="search" id="keywords" name="keywords" placeholder="Keywords"></input>
+            </div>
+
+            <div class="col-md-3 mo-3" >
+                <input type="search" id="city" name="city" placeholder="City"></input>
+            </div>
+
+            <div class="col-md-2 " >
+                <select name="state" class="form-control" placeholder="State">
+                    <option selected="true" disabled="disabled">State (All)</option>
+                    {% for key,value in state_choices.items %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %} 
+                </select>
+            </div>
+            
+
+            <div class="col-md-2 " >
+                <select name="price" class="form-control" placeholder="State">
+                    <option selected="true" disabled="disabled">Max Price</option>
+                     {% for key,value in price_choices.items %}
+                        <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}  
+                </select>
+            </div>
+
+
+                
+            <div class="col-md-3 mb-3">
+                <select name="bedrooms" class="form-control" placeholder="Stndard">
+                    <option selected="true" disabled="disabled">Room Type (All)</option>
+                        {% for key,value in bedroom_choices.items %}
+                            <option value="{{ key }}">{{ value }}</option>
+                        {% endfor %}
+                </select>
+            </div>
+
+
+            <div class="col-md-3 mb-3">
+                <select name="bedsize_choices" class="form-control" id="type">
+                    <option selected="true" disabled="disabled">Bed Size (Any)</option>
+                        {% for key, value in bedsize_choices.items %}
+                            <option value="{{ key }}">{{ value }}</option>
+                        {% endfor %}
+                  
+                </select>
+            </div>
+             
+              <button class="btn btn-secondary btn-block mt-1" type="submit">Submit Form</button>
+            </form>
+          
+            
+                  
+          
+    
+    </form>

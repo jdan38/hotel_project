@@ -26,4 +26,4 @@ class Staff(models.Model):
 
 
     def __str__(self):
-        return self.fname
+        return self.id
