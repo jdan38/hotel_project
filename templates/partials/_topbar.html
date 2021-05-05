@@ -8,15 +8,15 @@
             <h2>Where would you like to go!</h2>
     
             <div class="col-md-3 mo-3" >
-                <input type="search" id="keywords" name="keywords" placeholder="Keywords"></input>
+                <input type="text" id="keywords" name="keywords" class="form-control" placeholder="Keywords (room type, etc)"></input>
             </div>
 
             <div class="col-md-3 mo-3" >
-                <input type="search" id="city" name="city" placeholder="City"></input>
+                <input type="text" id="city" name="city" class="form-control"  placeholder="City"></input>
             </div>
 
             <div class="col-md-2 " >
-                <select name="state" class="form-control" placeholder="State">
+                <select type="text" id="state" name="state" class="form-control" placeholder="State">
                     <option selected="true" disabled="disabled">State (All)</option>
                     {% for key,value in state_choices.items %}
                         <option value="{{ key }}">{{ value }}</option>
