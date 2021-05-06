@@ -20,6 +20,24 @@
     <link rel="stylesheet" href=" {% static 'assets/css/zabuto_calendar.min.css' %} " type="text/css">
     <link rel="stylesheet" href=" {% static 'assets/css/owl.carousel.css' %} " type="text/css">
     <link rel="stylesheet" href=" {% static 'assets/css/style.css' %} " type="text/css">
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href=" {% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+     <!-- GOOGLE WEB FONT -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'csslog/custom.css' %}" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'csslog/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'csslog/vendors.css' %}" rel="stylesheet">
+    <link href="{% static 'csslog/style.css' %}" rel="stylesheet">
     <title>Hotel JD | Welcome</title>
 </head>
 <body>
@@ -53,6 +71,22 @@
 <script type="text/javascript" src="{% static 'assets/js/maps.js' %}"></script>
 <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
 
+{% comment %} <video id="my-video" class="video" loop muted autoplay playsinline>
+      <source src="{% static 'media/demo.mp4' %}" type="video/mp4">
+      <source src="{% static 'media/demo.ogv' %}" type="video/ogg">
+      <source src="{% static 'media/demo.webm' %}" type="video/webm">
+	</video><!-- /video -->
+    <div class="video_fallback"></div> {% endcomment %}
+
+
+<!-- COMMON SCRIPTS -->
+    <script src="{% static 'jslog/common_scripts.js' %}"></script>
+	<script src="{% static 'jslog/common_func.js' %}"></script>
+
+
+<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'jslog/pw_strenght.js' %}"></script>	
+
 <script>
     var _latitude = 48.47292127;
     var _longitude = 4.28672791;
@@ -60,5 +94,8 @@
     var useAjax = true;
     bigMap(_latitude,_longitude, element, useAjax);
 </script>
+
+
+
 </body>
 </html>

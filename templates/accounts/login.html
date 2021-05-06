@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+	
+ <div class="col-12">
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div class="panel right">
+	    <aside>
+	        <figure>
+	            <a href="#0"><img src="{% static 'img/logo_black.svg' %}" width="46" height="40" alt=""></a>
+	        </figure>
+	       <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+	            <a href="#0" class="social_bt facebook">Login with Facebook</a>
+	            <a href="#0" class="social_bt google">Login with Google</a>
+	            <div class="divider"><span>Or</span></div>
+	            <div class="form-group">
+	                <label for="email_address">Email Address</label>
+	                <input type="email" name="email_address" id="email_address" class="form-control">
+	            </div>
+	            <div class="form-group">
+	                <label for="password">Password</label>
+	                <input type="password" name="password" id="password" class="form-control">
+	            </div>
+	            <div class="clearfix mb-3">
+	                <div class="float-left">
+	                    <label class="container_check">Remember Me
+	                        <input type="checkbox">
+	                        <span class="checkmark"></span>
+	                    </label>
+	                </div>
+	                <div class="float-right">
+	                    <a id="forgot" href="javascript:void(0);">Forgot Password?</a>
+	                </div>
+	            </div>
+	            <button type="submit" class="btn_1 full-width">Login</button>
+	        </form>
+	        <p class="text-center mt-3">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+	        <form class="input_style_1" method="post">
+	            <div id="forgot_pw">
+	                <div class="form-group">
+	                    <label for="email_forgot">Login email</label>
+	                    <input type="email" class="form-control" name="email_forgot" id="email_forgot">
+	                </div>
+	                <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+	                <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+	            </div>
+	        </form>
+	        <div class="copy">© 2021 Betler - All Rights Reserved.</div>
+	    </aside>
+	</div>
+	<!-- /panel -->
+	
+</div>
+
+{% endblock content %}
