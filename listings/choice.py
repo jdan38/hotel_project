@@ -5,7 +5,10 @@ price_choices = {
   '400':'$400',
   '500':'$500',
   '600':'$600',
-  '700':'$700+',
+  '700':'$700',
+  '800':'$800',
+  '900':'$900',
+  '1000':'$1000',
  
 }
 
@@ -68,12 +71,12 @@ state_choices = {
         'Washington': 'Washington',
         'WI': 'Wisconsin',
         'WV': 'West Virginia',
-        'WY': 'Wyoming'
+        'WY': 'Wyoming',
 }
 
 
 bedsize_choices = {
-  'f':'full',
+  'full':'full',
   'Queen':'Queen',
   'King':'King',
   'Twin':'Twin',

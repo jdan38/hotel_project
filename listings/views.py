@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, render 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .choice import  bedroom_choices, bedsize_choices, price_choices, state_choices
-from .models import Listing, Hotel
+from .models import Listing
+from .models import Hotel
 
 
 def index(request):
@@ -56,10 +57,10 @@ def search(request):
 			hotels = hotels.filter(state__iexact=state)
 		
 	# Price
-	# if 'price' in request.GET:
-	# 	price = request.GET['price']
-	# 	if price:
-	# 		queryset_list = queryset_list.filter(price__iexact=price)
+	if 'price' in request.GET:
+		price = request.GET['price']
+		if price:
+			queryset_list = queryset_list.filter(price__lte=price)
 
     # Room Type
 	# if 'title' in request.GET:
@@ -67,7 +68,7 @@ def search(request):
 	# 	if title:
 	# 		queryset_list = queryset_list.filter(title__iexact=title)
 
-	context = {
+	contexts = {
         
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices,
@@ -76,7 +77,7 @@ def search(request):
         'listings': queryset_list,
         'hotels': hotels
     }
-	return render(request, 'listings/search.html', context)
+	return render(request, 'listings/search.html', contexts)
      
 
 
