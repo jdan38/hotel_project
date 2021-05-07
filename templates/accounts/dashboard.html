@@ -1,1 +1,274 @@
-<h1>Dashboard</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<div class="page-wrapper">
+    <div id="page-header">
+        
+
+    <div id="page-content">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Listing</a></li>
+                <li class="active">Detail</li>
+            </ol>
+            <!--end breadcrumb-->
+            <div class="main-content">
+                <div class="title">
+                    <h1 class="inactive"><a href="my-accommodations.html">My Accommodations</a></h1>
+                    <h1><a href="profile.html">Profile</a></h1>
+                </div>
+                <!--end title-->
+                <div class="row">
+                    <div class="col-md-9">
+                        <form id="form-profile" class="labels-uppercase" method="post" action="?" enctype="multipart/form-data">
+                            <div class="row">
+                                <!--Profile Picture-->
+                                <div class="col-md-3 col-sm-3">
+                                    <section>
+                                        <h3>Profile Picture</h3>
+                                        <div id="profile-picture" class="profile-picture single-file-preview">
+                                            <img src="assets/img/person-01.jpg" alt="" class="image">
+                                            <div class="input">
+                                                <input name="file" type="file" class="">
+                                                <span>Click to upload a picture</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!--end col-md-3-->
+
+                                <!--Contact Info-->
+                                <div class="col-md-9 col-sm-9">
+                                    <section>
+                                        <h3>Personal Info</h3>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="name">Name</label>
+                                                    <input type="text" class="form-control" id="name" name="name" value="Jane Doe">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                            <!--end col-md-3-->
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" id="email" name="email" value="janedoe@example.com">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                            <!--end col-md-3-->
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="mobile">Mobile</label>
+                                                    <input type="text" class="form-control" id="mobile" name="mobile" pattern="\d*" value="903-675-5323">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                            <!--end col-md-3-->
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" class="form-control" id="phone" name="phone" pattern="\d*" value="(0)123 456 7890">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                            <!--end col-md-3-->
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <h3>Address</h3>
+                                        <div class="form-group">
+                                            <label for="state">State</label>
+                                            <input type="text" class="form-control" id="state" name="state" value="Ohio">
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="form-group">
+                                            <label for="city">City</label>
+                                            <input type="text" class="form-control" id="city" name="city" value="Georgetown">
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="row">
+                                            <div class="col-md-8 col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="street">Street</label>
+                                                    <input type="text" class="form-control" id="street" name="street" value="2050 Sampson Street">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                            <!--end col-md-8-->
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="zip">ZIP</label>
+                                                    <input type="text" class="form-control" id="zip" name="zip" pattern="\d*" value="80444">
+                                                </div>
+                                                <!--end form-group-->
+                                            </div>
+                                        </div>
+                                        <!--end col-md-3-->
+                                        <div class="form-group">
+                                            <label for="additional-address">Additional Address Line</label>
+                                            <input type="text" class="form-control" id="additional-address" name="additional-address">
+                                        </div>
+                                        <!--end form-group-->
+                                    </section>
+                                    <section>
+                                        <h3>About Me</h3>
+                                        <div class="form-group">
+                                            <label for="about-me">Some Words About Me</label>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="about-me" rows="3" name="about-me" required></textarea>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end form-group-->
+                                    </section>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-large btn-primary btn-rounded" id="submit">Save Changes</button>
+                                    </div>
+                                    <!-- end form-group -->
+                                </div>
+                                <!--end col-md-6-->
+                            </div>
+                        </form>
+                    </div>
+                    <!--Password-->
+                    <div class="col-md-3 col-sm-9">
+                        <form class="labels-uppercase" id="form-password" method="post" action="?">
+                            <h3>Password Change</h3>
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" class="form-control" id="current-password" name="current-password">
+                            </div>
+                            <!--end form-group-->
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" class="form-control" id="new-password" name="new-password">
+                            </div>
+                            <!--end form-group-->
+                            <div class="form-group">
+                                <label for="confirm-new-password">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirm-new-password" name="confirm-new-password">
+                            </div>
+                            <!--end form-group-->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-rounded btn-framed">Change Password</button>
+                            </div>
+                            <!-- end form-group -->
+                        </form>
+                    </div>
+                    <!-- end col-md-3-->
+                </div>
+            </div>
+            <!--end main-content-->
+        </div>
+        <!--end container-->
+    </div>
+    <!--end page-content-->
+
+   
+</div>
+<!--end page-wrapper-->
+<a href="#page-header" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
+
+<!-- Modal -->
+<div class="modal fade" id="sign-in-register" tabindex="-1" role="dialog">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="modal-dialog width-400px" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#tab-sign-in" role="tab" data-toggle="tab"><h1>Sign In</h1></a></li>
+                            <li role="presentation"><a href="#tab-register" role="tab" data-toggle="tab"><h1>Register</h1></a></li>
+                        </ul>
+                    </div>
+                    <!--end modal-header-->
+                    <div class="modal-body">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="tab-sign-in">
+                                <form id="form-sign">
+                                    <div class="form-group">
+                                        <label for="form-sign-in-email">E-mail</label>
+                                        <input type="text" class="form-control" id="form-sign-in-email" name="sign_in_email" placeholder="Login E-mail">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="form-sign-in-password">Password</label>
+                                        <input type="password" class="form-control" id="form-sign-in-password" name="sign_in_password" placeholder="*****">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="clearfix action">
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary btn-rounded">Sign In</button>
+                                        </div>
+                                        <div class="form-group pull-left">
+                                            <label><input type="checkbox" name="1">Login Automatically</label>
+                                        </div>
+                                    </div>
+                                    <!--end action-->
+                                </form>
+                                <!--end form-sign-in-->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab-register">
+                                <form id="form-register">
+                                    <div class="form-group">
+                                        <label for="form-register-name">Name</label>
+                                        <input type="text" class="form-control" id="form-register-name" name="register_name" placeholder="John">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="form-register-surname">Surname</label>
+                                        <input type="text" class="form-control" id="form-register-surname" name="register_surname" placeholder="Doe">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="form-register-email">E-mail</label>
+                                        <input type="text" class="form-control" id="form-register-email" name="register_email" placeholder="Login E-mail">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="form-register-password">Password</label>
+                                        <input type="password" class="form-control" id="form-register-password" name="register_password" placeholder="*****">
+                                    </div>
+                                    <!--end form-group-->
+                                    <div class="clearfix action">
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary btn-rounded">Sign In</button>
+                                        </div>
+                                        <div class="form-group pull-left">
+                                            <label><input type="checkbox" name="1">Login Automatically</label>
+                                        </div>
+                                    </div>
+                                    <!--end action-->
+                                </form>
+                                <!--end form-sign-in-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--end modal-body-->
+                    <div class="modal-footer">
+                        <div class="center">
+                            <div>Lost Password? <a href="#">Reset here</a></div>
+                            <div>New to Accommondo? <a href="#">Register an account</a></div>
+                        </div>
+                    </div>
+                    <!--end modal-footer-->
+                </div>
+                <!--end modal-content-->
+            </div>
+            <!--end modal-dialog-->
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+{% endblock content%}

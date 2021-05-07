@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% block title %}| Registraion {% endblock title %}
+
 {% load static %}
 
 
@@ -17,6 +19,8 @@
                 <figure>
                     <a href="#0"><img src=" {% static 'img/logo_black.svg' %}" width="46" height="40" alt=""></a>
                 </figure>
+                <!-- Alerts -->
+                {% comment %} {% include 'partials/_alerts.html' %} {% endcomment %}
                 <form action="{% url 'register' %}" method="POST">
                 {% csrf_token %}
                     <a href="#0" class="social_bt facebook">Sign Up with Facebook</a>
@@ -24,12 +28,20 @@
                     <div class="divider"><span>Or</span></div>
                     
                     <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" id="first_name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name" id="last_name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
                         <label for="username">UserName</label>
                         <input type="text" name="username" id="username" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="email_address">Email Address</label>
-                        <input type="email" name="email_address" id="email_address" class="form-control" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="password1">Password</label>
@@ -41,7 +53,8 @@
                     </div>
                     <div id="pass-info" class="clearfix"></div>
                     <div class="mb-4">
-                        <label class="container_check">I agree to the <a href="#" data-toggle="modal" data-target="#terms-txt">Terms and Privacy Policy</a>.
+                        <label >I agree to the <a href="#" data-toggle="modal" data-target="#terms-txt">
+                        Terms and Privacy Policy</a>.
                             <input type="checkbox">
                             <span class="checkmark"></span>
                         </label>
@@ -93,6 +106,7 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-	</div>
+	
+   
 
 {% endblock %}
